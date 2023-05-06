@@ -1,0 +1,13 @@
+.logo {
+    display: flex;
+}
+
+.logo > img {
+    width: 60px;
+    height: 60px;
+}
+
+.logo > h2 {
+    margin: 10px;
+
+}
