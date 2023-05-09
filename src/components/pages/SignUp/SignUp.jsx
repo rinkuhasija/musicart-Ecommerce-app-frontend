@@ -1,45 +1,47 @@
-import Footer from '../../layout/Footer/Footer'
+import Footer from '../../layout/Footer/Footer';
 import Logo from '../../layout/Logo/Logo'
-import styles from './login.module.css'
+import styles from './signUp.module.css'
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { Link, useNavigate } from "react-router-dom"
 import toast, { Toaster } from 'react-hot-toast';
 
-function Login() {
+function SignUp() {
 
     // const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const [full_name, setFullName] = useState("");
+    const [phone_number, setPhoneNumber] = useState("");
 
     const handleSubmit = async (e) => {
 
         e.preventDefault();
 
-        if (!email || !password) {
-            // alert("Please enter email and password");
-            toast.error("Please enter email and password");
+        if (!email || !password || !full_name || !phone_number) {
+            alert("Please complete the Form first");
         } else {
 
             try {
-                let res = await fetch("http://localhost:3000/login", {
+                let res = await fetch("http://localhost:3000/register", {
                     method: "POST",
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         email: email,
                         password: password,
+                        full_name: full_name,
+                        mobile: phone_number
                     }),
                 });
                 let resJson = await res.json();
 
-                if (res.status === 200) {
+                if (res.status === 201) {
                     setEmail("");
                     setPassword("");
-                    // alert(`Hello ${email.slice(0, (email.length - 10))} . You are successfully Logged in`)
-                    toast.success("You are successfully Logged in");
-                    const token = resJson;
-                    window.localStorage.setItem("token", token)
+                    setFullName("");
+                    setPhoneNumber("");
+                    // alert(`SignUp successful. You can login Now`)
+                    toast.success('SignUp successful');
 
                     // navigate("/");
 
@@ -53,12 +55,14 @@ function Login() {
     }
 
     return (
-        <div className={styles.login}>
+        <div className={styles.signUpContainer}>
 
             <div className={styles.logo}>
                 <Logo />
                 <Toaster />
             </div>
+
+
 
             <div className={styles.loginForm}>
 
@@ -66,19 +70,29 @@ function Login() {
 
                     <div className={styles.formContainer}>
 
-                        <h2> Sign in</h2> <br />
+                        <h2> Create Account </h2> <br />
 
                         <form className={styles.formGroup} >
 
-                            <label htmlFor="email"> Enter your email or mobile number </label> <br />
+                            <label htmlFor="name" className={styles.label}> Your name </label> <br />
+                            <input type="text" value={full_name} name='name' placeholder='Your name' id={styles.name} onChange={(e) => setFullName(e.target.value)} /> <br /> <br />
+
+                            <label htmlFor="mobile_no" className={styles.label}> Mobile number </label> <br />
+                            <input type="number" value={phone_number} name='mobile_no' placeholder='Mobile no.' id={styles.mobileNo} onChange={(e) => setPhoneNumber(e.target.value)} /> <br /> <br />
+
+                            <label htmlFor="email" id={styles.labelEmail}> Enter your email or mobile number </label> <br />
                             <input type="email" value={email} name='email' placeholder='Email' id={styles.email} onChange={(e) => setEmail(e.target.value)} /> <br /> <br />
 
-                            <label htmlFor="password" id={styles.secondLabel}> Password </label> <br />
+                            <label htmlFor="password" className={styles.label}> Password </label> <br />
                             <input type="password" value={password} name='password' placeholder='Password' id={styles.password} onChange={(e) => setPassword(e.target.value)} />
 
                         </form> <br />
 
+                        <p id={styles.youMustAgree}> By enrolling your mobile phone number, you consent to receive automated security notifications via text message from Musicart. Message and data rates may apply.
+                        </p>
+
                         <button id={styles.submitBtn} onClick={handleSubmit}>  <span> Continue </span> </button>
+
                         <p> By continuing, you agree to Musicart privacy notice and conditions of use. </p>
                     </div>
                 </div >
@@ -86,20 +100,17 @@ function Login() {
 
             </div>
 
-            <div className={styles.newUser}>
-                <p>New to Musicart?</p>
+            <div className={styles.oldUser}>
+                <p>Already have an account? <Link to="/login"> Sign in </Link></p>
 
             </div>
-
-            <button id={styles.createAccountBtn}>  <span> <Link to='/'> Create your Musicart account </Link>    </span></button>
 
             <div className={styles.footer}>
                 <Footer />
             </div>
 
-
         </div>
     )
 }
 
-export default Login
+export default SignUp

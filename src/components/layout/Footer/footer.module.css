@@ -1,19 +1,26 @@
 .footer {
+    margin-top: 13px;
+    height: 2.6rem;
     background-color: #2E0052;
     padding: 10px 0;
-    margin-top: 10px;
+    margin-top: 15px;
     text-align: center;
     font-size: 14px;
     color: #fff;
+
+    /* stick to bottom */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
 }
 
 .footer>p {
-    height: 14px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 31px;
+    font-size: 16px;
     /* identical to box height */
     color: #FFFFFF;
 }

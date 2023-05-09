@@ -1,0 +1,48 @@
+.navBar {
+    margin: 0;
+    margin-top: -10px;
+    margin-left: -10px;
+    padding: 0;
+    height: 60px;
+    width: 100vw;
+    background-color: #2E0052;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.logo> img, .logo> p {
+    margin-left: 11px;
+    display: inline;
+}
+
+.logo > img {
+    margin-top: 10px;
+}
+.navInner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo>p,
+.middleContent>p,
+.logout>div {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.logout {
+    margin-top: 15px;
+    margin-right: 20px;
+
+}
+
+@media screen and (max-width: 800px) {
+    .navBar {
+        display: none;
+    }
+}

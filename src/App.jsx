@@ -5,6 +5,10 @@ import './App.css'
 import Logo from './components/layout/Logo/Logo'
 import Footer from './components/layout/Footer/Footer'
 import Login from './components/pages/Login/Login'
+import SignUp from './components/pages/SignUp/SignUp'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import SuccessCheckout from './components/pages/SuccessCheckout/SuccessCheckout'
+import NavBar from './components/layout/NavBar/NavBar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,13 +16,23 @@ function App() {
   return (
     <>
 
-    {/* <Logo />
+      {/* <Logo />
 
     <Footer /> */}
 
-    <Login />
+      {/* <Login /> */}
 
-        
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path='/success' element={<SuccessCheckout />} />
+          <Route path='/nav' element={<NavBar />} />
+        </Routes>
+      </BrowserRouter>
+
+
+
     </>
   )
 }

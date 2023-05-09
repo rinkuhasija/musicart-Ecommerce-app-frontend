@@ -1,9 +1,9 @@
-.login {
+.signUpContainer {
     display: flex;
     flex-direction: column;
 }
 
-.login>.logo {
+.signUpContainer>.logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -22,16 +22,16 @@
     border: 3px solid #D9D9D9;
     border-radius: 23.2008px;
     width: 500px;
-    height: 500px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+    height: fit-content;
 
 }
 
 .formContainer {
     margin: auto auto;
-    margin-top: 2vh;
+    margin-top: 1vh;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -50,28 +50,37 @@
 }
 
 .formContainer>p {
+    margin-left: 1.8rem;
     height: 30px;
+    padding: 10px;
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 500;
-    font-size: 17px;
+    width: 30vw;
+    font-size: 15px;
     line-height: 144.02%;
     text-align: center;
     color: #525252;
 }
 
-.formGroup>label:nth-child(1) {
-    position: relative;
-    left: -5vw;
+.formGroup {
+    margin-top: -15px;
 }
 
-#secondLabel {
+.label {
     position: relative;
-    left: -10vw;
+    left: -12vw;
+}
+
+#labelEmail {
+    position: relative;
+    left: -7vw;
 }
 
 #email,
-#password {
+#password,
+#mobileNo,
+#name {
     margin: 6px;
     padding-left: 10px;
     margin-left: -0.3rem;
@@ -88,7 +97,20 @@
     color: #525252;
 }
 
+#youMustAgree {
+    margin-left: 29px;
+    width: 30vw;
+    height: 60px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+}
+
 .formContainer>#submitBtn {
+    margin-top: 16px;
     width: 420px;
     height: 35px;
     cursor: pointer;
@@ -110,79 +132,39 @@
     color: #FFFFFF;
 }
 
-/* a {
-    width: 75px;
-    height: 30px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 144.02%;
+.oldUser {
+    height: 100px;
     text-align: center;
-    text-decoration-line: underline;
-    color: #000000;
-} */
-.newUser {
-    text-align: center;
-    margin-top: 13px
+    margin-top: 1rem;
 }
 
-.newUser>hr {
+/* .oldUser>hr {
     width: 100px;
-}
-
-.footer {
-    /* fixed bottom */
-    position: absolute;
-    bottom: 0;
-    width: 99.5%;
-    height: auto;
-}
-
-.login>#createAccountBtn {
-    margin-top: 10px;
-    margin: auto auto;
-    width: 500px;
-    height: 35px;
-    cursor: pointer;
-    border: none;
-    margin-bottom: 10px;
-    background: #FFFFFF;
-    border: 2px solid #BDBDBD;
-    border-radius: 10px;
-}
-
-.login>#createAccountBtn>span {
-    width: 88px;
-    height: 40px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    /* identical to box height, or 113% */
-    text-align: center;
-    color: #000000;
-}
+} */
 
 @media screen and (max-width: 800px) {
     .loginForm {
         width: 70vw;
-        height: 450px;
+        height: auto;
     }
 
     .formContainer>h2 {
-        height: 40px;
-        font-size: 25px;
+        height: 30px;
+        font-size: 28px;
     }
 
     .formContainer>p {
-        height: 20px;
+        margin-top: -8px;
+        margin-left: 11vw;
+        width: 39vw;
+        height: 50px;
         font-size: 14px;
     }
 
     #email,
-    #password {
+    #password,
+    #mobileNo,
+    #name {
         width: 35vw;
         height: 40px;
         min-width: 300px;
@@ -193,35 +175,60 @@
         height: 35px;
     }
 
-    .login>#createAccountBtn {
-        width: 330px;
-        height: 35px;
+    #youMustAgree {
+        margin-top: -15px;
+        margin-left: 11vw;
+        width:42vw;
+        height: 90px;
+        font-size: 15px;
     }
-    
+
 }
 
 @media screen and (max-width: 500px) {
 
     .loginForm {
-        width: 360px;
-        height: 450px;
+        padding: 1.4rem;
+        width: 70vw;
+        height: auto;
     }
 
     .formContainer>h2 {
-        height: 40px;
-        font-size: 23px;
+        height: 31px;
+        font-size: 26px;
     }
 
     .formContainer>p {
+        margin-top: -8px;
+        margin-left: 11vw;
+        width: 47vw;
         padding: 5px;
-        height: 20px;
-        font-size: 14px;
+        height: 40px;
+        font-size: 13px;
     }
 
     #email,
-    #password {
+    #password,
+    #mobileNo,
+    #name {
+        margin-left: 4px;
         width: 35vw;
         height: 40px;
-        min-width: 300px;
+        min-width: 260px;
+    }
+
+    .formContainer>#submitBtn {
+        width: 40vw;
+        height: 35px;
+    }
+
+    #youMustAgree {
+        padding-bottom: 10px;
+        margin-top: -15px;
+        margin-left: 11vw;
+        width:42vw;
+        height: 30vw;
+        max-height: 103px;
+        font-size: 13px;
     }
 }
