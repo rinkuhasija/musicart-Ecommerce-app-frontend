@@ -9,6 +9,7 @@ import SignUp from './components/pages/SignUp/SignUp'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SuccessCheckout from './components/pages/SuccessCheckout/SuccessCheckout'
 import NavBar from './components/layout/NavBar/NavBar'
+import ViewCart from './components/pages/ViewCart/ViewCart'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +29,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path='/success' element={<SuccessCheckout />} />
           <Route path='/nav' element={<NavBar />} />
+          <Route path='/cart' element={<ViewCart />} />
         </Routes>
       </BrowserRouter>
 

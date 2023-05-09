@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 function SignUp() {
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,7 +19,7 @@ function SignUp() {
         e.preventDefault();
 
         if (!email || !password || !full_name || !phone_number) {
-            alert("Please complete the Form first");
+            toast.error("Please complete the Form first");
         } else {
 
             try {
@@ -43,12 +43,15 @@ function SignUp() {
                     // alert(`SignUp successful. You can login Now`)
                     toast.success('SignUp successful');
 
-                    // navigate("/");
+                    setTimeout(() => {
+                        navigate("/cart");
+                    }, 2000);
 
                 } else {
                     console.log("Error occurred");
                 }
             } catch (err) {
+                toast.error("Error")
                 console.log(err);
             }
         };

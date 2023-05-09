@@ -123,8 +123,9 @@
     color: #000000;
 } */
 .newUser {
+    margin-top: -3px;
+    height: 70px;
     text-align: center;
-    margin-top: 13px
 }
 
 .newUser>hr {
@@ -139,9 +140,9 @@
     height: auto;
 }
 
-.login>#createAccountBtn {
-    margin-top: 10px;
+.login> #createAccountBtn {
     margin: auto auto;
+    margin-top: -30px;
     width: 500px;
     height: 35px;
     cursor: pointer;

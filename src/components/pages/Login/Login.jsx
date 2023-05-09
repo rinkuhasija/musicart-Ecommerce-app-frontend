@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 function Login() {
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -41,12 +41,17 @@ function Login() {
                     const token = resJson;
                     window.localStorage.setItem("token", token)
 
-                    // navigate("/");
+                    //show toast msg before navigate
+                    setTimeout(() => {
+                        navigate("/cart");
+                    }, 2000);
 
                 } else {
+                    
                     console.log("Error occurred");
                 }
             } catch (err) {
+                toast.error("invalid email or password")
                 console.log(err);
             }
         };
@@ -90,7 +95,7 @@ function Login() {
                 <p>New to Musicart?</p>
 
             </div>
-
+            
             <button id={styles.createAccountBtn}>  <span> <Link to='/'> Create your Musicart account </Link>    </span></button>
 
             <div className={styles.footer}>
