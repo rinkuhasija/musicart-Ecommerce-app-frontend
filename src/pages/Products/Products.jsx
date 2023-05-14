@@ -14,7 +14,7 @@ function Products() {
     const myRef = useRef(null);
     // let data = ["", "", "", ""]
     const [results, setResults] = useState([])
-    let url = 'https://musicart-cuvette-backend.onrender.com/getproductsdata'
+    let url = 'https://musicart-cuvette-backend.onrender.com/api/v1/getproductsdata'
     // let url = 'http://localhost:3000/getProductsData'
     let data = []
 
