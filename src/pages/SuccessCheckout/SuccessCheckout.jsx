@@ -1,7 +1,7 @@
-import Footer from '../../layout/Footer/Footer'
-import Logo from '../../layout/Logo/Logo'
+import Footer from '../../components/layout/Footer/Footer'
+import Logo from '../../components/layout/Logo/Logo'
 import styles from './successCheckout.module.css'
-import party from '../../../assets/party-img.png'
+import party from '../../assets/party-img.png'
 
 function SuccessCheckout() {
     return (

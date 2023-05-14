@@ -2,38 +2,41 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Logo from './components/layout/Logo/Logo'
-import Footer from './components/layout/Footer/Footer'
-import Login from './components/pages/Login/Login'
-import SignUp from './components/pages/SignUp/SignUp'
+import Login from './pages/Login/Login'
+import SignUp from './pages/SignUp/SignUp'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import SuccessCheckout from './components/pages/SuccessCheckout/SuccessCheckout'
+import SuccessCheckout from './pages/SuccessCheckout/SuccessCheckout'
 import NavBar from './components/layout/NavBar/NavBar'
-import ViewCart from './components/pages/ViewCart/ViewCart'
+import ViewCart from './pages/ViewCart/ViewCart'
+import Checkout from './pages/Checkout/Checkout'
+import Products from './pages/Products/Products'
+import PageNotFound from './pages/PageNotFound/PageNotFound'
+import { Toaster } from 'react-hot-toast'
+import TestPage from './pages/TestPage/TestPage'
+import AuthState from './context/login/authState'
+import authContext from './context/login/authContext';
+import { useContext } from 'react'
+import AlreadyLoggedIn from './pages/AlreadyloggedIn/AlreadyLoggedIn'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
+      <AuthState >
+        <BrowserRouter>
+          <Routes>
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path='/success' element={<SuccessCheckout />} />
+            <Route path='/cart' element={<ViewCart />} />
+            <Route path='/checkout' element={<Checkout />} />
+            <Route path='/' element={<Products />} />
+            <Route path='*' element={<PageNotFound />} />
+            <Route path='/test' element={<TestPage />} />
 
-      {/* <Logo />
-
-    <Footer /> */}
-
-      {/* <Login /> */}
-
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path='/success' element={<SuccessCheckout />} />
-          <Route path='/nav' element={<NavBar />} />
-          <Route path='/cart' element={<ViewCart />} />
-        </Routes>
-      </BrowserRouter>
-
-
+          </Routes>
+        </BrowserRouter>
+      </AuthState>
 
     </>
   )

@@ -1,5 +1,5 @@
-import Footer from '../../layout/Footer/Footer';
-import Logo from '../../layout/Logo/Logo'
+import Footer from '../../components/layout/Footer/Footer'
+import Logo from '../../components/layout/Logo/Logo'
 import styles from './signUp.module.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -23,7 +23,7 @@ function SignUp() {
         } else {
 
             try {
-                let res = await fetch("http://localhost:3000/register", {
+                let res = await fetch("https://musicart-cuvette-backend.onrender.com/register", {
                     method: "POST",
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -40,15 +40,14 @@ function SignUp() {
                     setPassword("");
                     setFullName("");
                     setPhoneNumber("");
-                    // alert(`SignUp successful. You can login Now`)
                     toast.success('SignUp successful');
 
                     setTimeout(() => {
-                        navigate("/cart");
+                        navigate("/login");
                     }, 2000);
 
                 } else {
-                    console.log("Error occurred");
+                    console.log("Something went wrong");
                 }
             } catch (err) {
                 toast.error("Error")
@@ -96,7 +95,7 @@ function SignUp() {
 
                         <button id={styles.submitBtn} onClick={handleSubmit}>  <span> Continue </span> </button>
 
-                        <p> By continuing, you agree to Musicart privacy notice and conditions of use. </p>
+                        <p id={styles.privacyPolicy}> By continuing, you agree to Musicart privacy notice and conditions of use. </p>
                     </div>
                 </div >
 
@@ -104,7 +103,7 @@ function SignUp() {
             </div>
 
             <div className={styles.oldUser}>
-                <p>Already have an account? <Link to="/login"> Sign in </Link></p>
+                <p>Already have an account? <Link className={styles.linkTag} to="/login"> Sign in </Link></p>
 
             </div>
 

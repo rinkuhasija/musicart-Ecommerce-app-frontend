@@ -1,11 +1,15 @@
-import Footer from '../../layout/Footer/Footer'
-import Logo from '../../layout/Logo/Logo'
+import Footer from '../../components/layout/Footer/Footer'
+import Logo from '../../components/layout/Logo/Logo'
 import styles from './login.module.css'
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from "react-router-dom"
 import toast, { Toaster } from 'react-hot-toast';
+import axios from 'axios';
+import authContext from '../../context/login/authContext';
 
 function Login() {
+
+    const abcd = useContext(authContext)
 
     const navigate = useNavigate();
 
@@ -18,12 +22,11 @@ function Login() {
         e.preventDefault();
 
         if (!email || !password) {
-            // alert("Please enter email and password");
             toast.error("Please enter email and password");
         } else {
 
             try {
-                let res = await fetch("http://localhost:3000/login", {
+                let res = await fetch("https://musicart-cuvette-backend.onrender.com/api/v1/login", {
                     method: "POST",
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -36,18 +39,17 @@ function Login() {
                 if (res.status === 200) {
                     setEmail("");
                     setPassword("");
-                    // alert(`Hello ${email.slice(0, (email.length - 10))} . You are successfully Logged in`)
-                    toast.success("You are successfully Logged in");
                     const token = resJson;
                     window.localStorage.setItem("token", token)
+                    abcd.updateStateFalse();
+                    toast.success("You are successfully Logged in");
 
                     //show toast msg before navigate
                     setTimeout(() => {
-                        navigate("/cart");
+                        navigate("/");
                     }, 2000);
 
                 } else {
-                    
                     console.log("Error occurred");
                 }
             } catch (err) {
@@ -95,8 +97,8 @@ function Login() {
                 <p>New to Musicart?</p>
 
             </div>
-            
-            <button id={styles.createAccountBtn}>  <span> <Link to='/'> Create your Musicart account </Link>    </span></button>
+
+            <button id={styles.createAccountBtn}>  <span> <Link className={styles.linkTag} to='/signup'> Create your Musicart account </Link>    </span></button>
 
             <div className={styles.footer}>
                 <Footer />

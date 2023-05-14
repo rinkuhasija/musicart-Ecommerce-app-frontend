@@ -1,0 +1,78 @@
+.checkout {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout > .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-bottom: 0.5rem;
+}
+
+.backBtn > button {
+    margin-top: 2vh;
+    margin-left: 2vw;
+    width: 150px;
+    height: 40px;
+    background-color: #2E0052;
+    border-radius: 9px;
+}
+
+span {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+.checkout > .middleText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 6px;
+    text-decoration: underline;
+}
+
+.mainContentContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.mainContentContainer > .leftSide {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    margin: 11px;
+}
+
+.insideCheckoutFields {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+/* .insideReviewItems {
+    
+} */
+
+hr {
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border: 1px solid #E3E3E3;
+}
+
+.mainContentContainer > .rightSide {
+    width: 30vw;
+    margin: 11px;
+    display: flex;
+    flex-direction: column;
+}

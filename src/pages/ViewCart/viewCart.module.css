@@ -31,15 +31,51 @@
     color: #FFFFFF;
 }
 
-.viewCart > .myCart {
+.viewCart>.myCart {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 6px;
 }
 
-.viewCart > .myCart > img {
+.viewCart>.myCart>img {
     margin-right: 15px;
     width: 50px;
     height: 50px;
+}
+
+.cartItemsWithAmount {
+    display: flex;
+    margin: auto auto;
+}
+
+.cartItemsWithAmount>.leftSide {
+    margin-top: 2vh;
+    display: flex;
+    width: 60vw;
+}
+
+.cartItemsWithAmount>.rightSide {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightSide>button {
+    margin-top: 10px;
+    width: 180px;
+    height: 40px;
+    background-color: #FFD600;
+    border-radius: 10px;
+}
+
+.rightSide > button > span {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 32px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    color: #000000;
 }

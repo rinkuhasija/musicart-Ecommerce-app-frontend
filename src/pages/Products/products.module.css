@@ -1,0 +1,239 @@
+.productsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.productsContainer>.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-bottom: 0.5rem;
+}
+
+.productsContainer>.banner {
+    height: auto;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 0.5rem;
+    width: auto;
+    background: linear-gradient(90deg, #7286B4 0%, #E794CE 100%);
+    border-radius: 29px;
+}
+
+.insideBannerLeft>h2 {
+    margin-left: 4vw;
+    width: 30vw;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 39px;
+    color: #2E0052;
+}
+
+
+
+.insideBannerLeft>button {
+    margin-left: 4vw;
+    width: 150px;
+    height: 40px;
+    background-color: #2E0052;
+    border-radius: 20px;
+    border: none;
+}
+
+.insideBannerLeft>button>span {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+.insideBannerRight {
+    min-height: 100%;
+    width: 300px;
+    height: 200px;
+    margin-top: 1vh;
+    margin-right: 2vw;
+    margin-bottom: 1vw;
+    background: url(../../assets/girl-banner-img.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.viewTypeAndFilterSelect {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 0.5rem;
+}
+
+.productList {
+    margin-top: -10px;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 6px;
+    row-gap: 6px;
+    width: 90vw;
+    margin-left: 4vw;
+    flex-wrap: wrap;
+}
+
+
+.productListInListView {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 6px;
+    row-gap: 10px;
+    width: 85vw;
+}
+
+.listView {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.oneProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.loadingContentBefore {
+    width: 70vw;
+    height: 40vh;
+}
+
+.oneProduct>img,
+.leftListView>img {
+    width: 220px;
+    height: 220px;
+    border: 16px solid #D4E5FF;
+}
+
+.oneProduct>p,
+.rightListView>p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 31px;
+    color: #000000;
+    margin-top: -10px;
+}
+
+.rightListView {
+    margin-left: 3vw;
+    width: 80vw;
+    height: 250px;
+}
+
+.rightListView>button {
+    width: 110px;
+    height: 40px;
+    background-color: #2E0052;
+    border-radius: 20px;
+    border: none;
+}
+
+
+.rightListView>button>span {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.searchProduct {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 92vw;
+}
+
+#searchProductInput {
+    padding-left: 50px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 3px solid #C8C8C8;
+    border-radius: 48px;
+    width: 90vw;
+    height: 45px;
+}
+
+.searchProduct > img {
+    position: relative;
+    width: 40px;
+    height: 34px;
+    left: 50px;
+    padding: 5px;
+    padding-left: 8px;
+}
+
+.viewTypeAndFilterSelect {
+    margin-top: 2vh;
+    margin-left: 3vw;
+    width: 90vw;
+}
+
+/* placeholder margin left */
+#searchProductInput::placeholder {
+    padding-left: 0px;
+}
+
+.filterSelect {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.filterSelect > div {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.gridListChange {
+    margin-left: 25px;
+}
+
+.gridListChange > img{
+    width: 30px;
+    height: 30px;
+    margin: 6px;
+}
+
+.sortSelect {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    margin-top: -5px;
+}
+
+.sortSelect > select {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 6px;
+    height: 33px;
+}

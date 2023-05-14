@@ -70,6 +70,10 @@
     left: -10vw;
 }
 
+.linkTag {
+    text-decoration: none;
+}
+
 #email,
 #password {
     margin: 6px;

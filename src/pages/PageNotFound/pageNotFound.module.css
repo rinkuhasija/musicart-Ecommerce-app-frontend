@@ -1,0 +1,29 @@
+.pnf {
+    display: flex;
+    min-height: 65vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pnTitle {
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.pnfHeading {
+    font-weight: normal;
+}
+
+.pnfBtn {
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.pnfBtn:hover {
+    background-color: black;
+    color: white;
+}
