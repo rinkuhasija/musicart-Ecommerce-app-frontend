@@ -17,6 +17,7 @@ import AuthState from './context/login/authState'
 import authContext from './context/login/authContext';
 import { useContext } from 'react'
 import AlreadyLoggedIn from './pages/AlreadyloggedIn/AlreadyLoggedIn'
+import SingleProduct from './pages/SingleProduct/SingleProduct'
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
             <Route path='/' element={<Products />} />
             <Route path='*' element={<PageNotFound />} />
             <Route path='/test' element={<TestPage />} />
+            <Route path="/products/:id" element={<SingleProduct />} />
 
           </Routes>
         </BrowserRouter>

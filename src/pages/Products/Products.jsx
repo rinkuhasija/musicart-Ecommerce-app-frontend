@@ -7,16 +7,17 @@ import axios from 'axios'
 import search from '../../assets/search-img1.png'
 import gridImg from '../../assets/grid-img.png'
 import list from '../../assets/list-img.png'
+import { generatePath, useNavigate, useParams } from 'react-router-dom'
 
 function Products() {
 
+    const navigate = useNavigate();
+
     const [grid, setGrid] = useState(true)
     const myRef = useRef(null);
-    // let data = ["", "", "", ""]
+
     const [results, setResults] = useState([])
     let url = 'https://musicart-cuvette-backend.onrender.com/api/v1/getproductsdata'
-    // let url = 'http://localhost:3000/getProductsData'
-    let data = []
 
     function getProducts() {
         axios.get(url)
@@ -107,6 +108,7 @@ function Products() {
             <main ref={myRef} className={grid ? styles.productList : styles.productListInListView}>
 
                 {grid ? results.map((result, index) => {
+
                     return (
 
                         <div key={index} className={styles.oneProduct}>
@@ -114,6 +116,10 @@ function Products() {
                             <h3>{result.name}</h3>
                             <p> Price - ₹ {result.price}</p>
                             <p> {result.color} | {result.category}</p>
+                            <button onClick={(e) => {
+                                // setId(result._id);
+                                navigate((`/products/${result._id}`));
+                            }}> <span> Details </span></button>
                         </div>)
 
                 }) : results.map((result, index) => {
@@ -130,7 +136,10 @@ function Products() {
                                 <p> Price - ₹ {result.price}</p>
                                 <p> {result.color} | {result.category}</p>
                                 <p> {result.features}</p>
-                                <button> <span> Details </span></button>
+                                <button onClick={(e) => {
+                                    // setId(result._id);
+                                    navigate((`/products/${result._id}`));
+                                }}> <span> Details </span></button>
                             </div>
 
                         </div>
@@ -138,14 +147,14 @@ function Products() {
                 })}
 
 
-            </main>
+            </main >
 
             <footer className={styles.footer}>
                 <Footer />
             </footer>
 
 
-        </div>
+        </div >
     )
 }
 

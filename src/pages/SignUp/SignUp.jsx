@@ -23,7 +23,7 @@ function SignUp() {
         } else {
 
             try {
-                let res = await fetch("https://musicart-cuvette-backend.onrender.com/register", {
+                let res = await fetch("https://musicart-cuvette-backend.onrender.com/api/v1/auth/register", {
                     method: "POST",
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
