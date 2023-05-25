@@ -17,7 +17,7 @@ function Products() {
     const myRef = useRef(null);
 
     const [results, setResults] = useState([])
-    let url = 'https://musicart-cuvette-backend.onrender.com/api/v1/getproductsdata'
+    let url = 'https://orca-app-ihire.ondigitalocean.app/api/v1/getproductsdata'
 
     function getProducts() {
         axios.get(url)
