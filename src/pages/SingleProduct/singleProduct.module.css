@@ -30,7 +30,7 @@
     border-radius: 14px;
 }
 
-.backBtn>button >span {
+.backBtn>button>span {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -39,7 +39,7 @@
     color: #FFFFFF;
 }
 
-.features{
+.features {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -112,4 +112,53 @@
     font-size: 15px;
     line-height: 31px;
     color: #000000;
+}
+
+@media (max-width : 1270px) {
+    .flexProductDisplay {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 90vw;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .leftImg {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+    }
+}
+
+@media (max-width : 1000px) {
+
+    .flexProductDisplay {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 90vw;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .leftImg {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+
+    .rightDetails {
+        margin-top: 3vh;
+        margin-bottom: 2vh;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70vw;
+    }
 }
