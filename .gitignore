@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 __tests__
+Dockerfile
+.dockerignore
