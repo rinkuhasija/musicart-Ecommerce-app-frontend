@@ -2,21 +2,36 @@ import Logo from '../../components/layout/Logo/Logo'
 import NavBar from '../../components/layout/NavBar/NavBar'
 import styles from './products.module.css'
 import Footer from '../../components/layout/Footer/Footer'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useContext } from 'react'
 import axios from 'axios'
 import search from '../../assets/search-img1.png'
 import gridImg from '../../assets/grid-img.png'
 import list from '../../assets/list-img.png'
-import { generatePath, useNavigate, useParams } from 'react-router-dom'
+import authContext from '../../context/login/authContext'
+import { useNavigate } from 'react-router-dom'
+import dataContext from '../../context/dataContext/dataContext'
 
 function Products() {
 
     const navigate = useNavigate();
+    const { dataState, setDataState } = useContext(dataContext)
+    // console.log(dataState);
 
     const [grid, setGrid] = useState(true)
     const myRef = useRef(null);
 
     const [results, setResults] = useState([])
+
+    const handleSearchSubmit = async () => {
+        try {
+            const { data } = await axios.get(`https://orca-app-ihire.ondigitalocean.app/api/v1/searchProduct/${dataState.keyword}`)
+            setDataState({ ...dataState, resultsFromContext: data })
+            setResults(data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     let url = 'https://orca-app-ihire.ondigitalocean.app/api/v1/getproductsdata'
 
     function getProducts() {
@@ -27,7 +42,6 @@ function Products() {
             .catch((error) => {
                 console.log(error);
                 myRef.current.insertAdjacentHTML('beforeend', '<div classname={styles.loadingContentBefore}>loading...</div>')
-
             })
 
     }
@@ -65,7 +79,9 @@ function Products() {
             <div className={styles.searchProduct}>
 
                 <img src={search} alt="search_svg" />
-                <input type="text" placeholder="Search Product" id={styles.searchProductInput} />
+                <input value={dataState.keyword} onChange={(e) => setDataState({ ...dataState, keyword: e.target.value })} type="text" placeholder="Search Product" id={styles.searchProductInput} />
+                <button onClick={handleSearchSubmit}> Search </button>
+                <button onClick={getProducts}> All Products</button>
 
             </div>
 

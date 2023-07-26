@@ -196,6 +196,17 @@
     padding-left: 8px;
 }
 
+.searchProduct button {
+    cursor: pointer;
+    color: white;
+    margin-left: 10px;
+    width: 110px;
+    height: 40px;
+    background-color: #2E0052;
+    border-radius: 20px;
+    border: none;
+}
+
 .viewTypeAndFilterSelect {
     margin-top: 2vh;
     margin-left: 3vw;
