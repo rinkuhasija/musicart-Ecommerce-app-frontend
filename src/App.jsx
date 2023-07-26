@@ -1,12 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import SuccessCheckout from './pages/SuccessCheckout/SuccessCheckout'
-import NavBar from './components/layout/NavBar/NavBar'
 import ViewCart from './pages/ViewCart/ViewCart'
 import Checkout from './pages/Checkout/Checkout'
 import Products from './pages/Products/Products'
@@ -35,6 +31,7 @@ function App() {
             <Route path='*' element={<PageNotFound />} />
             <Route path='/test' element={<TestPage />} />
             <Route path="/products/:id" element={<SingleProduct />} />
+            <Route path='/alreadyloggedin' element={<AlreadyLoggedIn />} />
 
           </Routes>
         </BrowserRouter>

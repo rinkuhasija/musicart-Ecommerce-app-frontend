@@ -3,6 +3,7 @@ import Logo from '../../components/layout/Logo/Logo'
 import NavBar from '../../components/layout/NavBar/NavBar'
 import styles from './viewCart.module.css'
 import cart from '../../assets/cart-img.png'
+import { Link } from 'react-router-dom'
 
 
 function ViewCart() {
@@ -18,7 +19,7 @@ function ViewCart() {
             </div>
 
             <div className={styles.backBtn}>
-                <button> <span> Back to products </span> </button>
+                <button> <Link to="/">  <span> Back to products </span> </Link></button>
             </div>
 
             <div className={styles.myCart}>

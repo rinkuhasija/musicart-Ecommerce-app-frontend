@@ -2,6 +2,7 @@ import Footer from '../../components/layout/Footer/Footer'
 import Logo from '../../components/layout/Logo/Logo'
 import styles from './successCheckout.module.css'
 import party from '../../assets/party-img.png'
+import { Link } from 'react-router-dom'
 
 function SuccessCheckout() {
     return (
@@ -21,7 +22,7 @@ function SuccessCheckout() {
                     <h3> Order is placed successfully! </h3>
                     <p> You  will be receiving a confirmation email with order details </p>
 
-                    <button> <span> Go back to Home page </span> </button>
+                    <button>  <Link to="/"> <span> Go back to Home page  </span> </Link>   </button>
                 </div>
 
                 <div className={styles.footer}>

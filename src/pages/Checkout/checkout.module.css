@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-.checkout > .logo {
+.checkout>.logo {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -12,7 +12,7 @@
     margin-bottom: 0.5rem;
 }
 
-.backBtn > button {
+.backBtn>button {
     margin-top: 2vh;
     margin-left: 2vw;
     width: 150px;
@@ -30,7 +30,7 @@ span {
     color: #FFFFFF;
 }
 
-.checkout > .middleText {
+.checkout>.middleText {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -43,7 +43,7 @@ span {
     flex-direction: row;
 }
 
-.mainContentContainer > .leftSide {
+.mainContentContainer>.leftSide {
     display: flex;
     flex-direction: column;
     width: 60vw;
@@ -70,9 +70,16 @@ hr {
     border: 1px solid #E3E3E3;
 }
 
-.mainContentContainer > .rightSide {
+.mainContentContainer>.rightSide {
     width: 30vw;
     margin: 11px;
     display: flex;
     flex-direction: column;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
