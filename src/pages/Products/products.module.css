@@ -247,10 +247,11 @@
     margin-top: -5px;
 }
 
-.sortSelect>select {
+.sortSelect>p {
+    cursor: pointer;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 6px;
+    margin-top: 15px;
     height: 33px;
 }
 

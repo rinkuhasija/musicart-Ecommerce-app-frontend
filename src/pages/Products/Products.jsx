@@ -38,6 +38,7 @@ function Products() {
         axios.get(url)
             .then((response) => {
                 setResults(response.data)
+                console.log(results)
             })
             .catch((error) => {
                 console.log(error);
@@ -49,6 +50,16 @@ function Products() {
     useEffect(() => {
         getProducts();
     }, [])
+
+    const sortByPrice = () => {
+        const sortedArr = [...results].sort((a, b) => a.price - b.price)
+        setResults(sortedArr)
+    }
+
+    const sortByBrand = () => {
+        const sortedArr = [...results].sort((a, b) => a.brand > b.brand ? 1 : -1)
+        setResults(sortedArr)
+    }
 
 
     return (
@@ -110,12 +121,10 @@ function Products() {
                 </div>
 
                 <div className={styles.sortSelect}>
-                    <p>Sort by</p>
-                    <select>
-                        <option value="price">Price</option>
-                        <option value="color">Color</option>
-                        <option value="category">Category</option>
-                    </select>
+                    <p onClick={sortByPrice}> Sort by Price  </p>
+
+                    <p onClick={sortByBrand}> Sort by Brand</p>
+
 
                 </div>
 
