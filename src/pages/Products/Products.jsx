@@ -24,7 +24,7 @@ function Products() {
 
     const handleSearchSubmit = async () => {
         try {
-            const { data } = await axios.get(`https://orca-app-ihire.ondigitalocean.app/api/v1/searchProduct/${dataState.keyword}`)
+            const { data } = await axios.get(`https://musicart-cuvette-backend.onrender.com/api/v1/searchProduct/${dataState.keyword}`)
             setDataState({ ...dataState, resultsFromContext: data })
             setResults(data)
         } catch (error) {
@@ -32,7 +32,7 @@ function Products() {
         }
     }
 
-    let url = 'https://orca-app-ihire.ondigitalocean.app/api/v1/getproductsdata'
+    let url = 'https://musicart-cuvette-backend.onrender.com/api/v1/getproductsdata'
 
     function getProducts() {
         axios.get(url)

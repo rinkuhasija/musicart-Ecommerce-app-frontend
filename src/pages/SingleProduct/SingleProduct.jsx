@@ -14,7 +14,7 @@ const SingleProduct = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`https://orca-app-ihire.ondigitalocean.app/api/v1/getProductById/${id}`)
+        axios.get(`https://musicart-cuvette-backend.onrender.com/api/v1/getProductById/${id}`)
             .then((response) => {
                 setProduct(response.data)
             })
